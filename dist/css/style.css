@@ -6,6 +6,8 @@
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
+
+
 /* Header */
 header {
     width: 100%;
@@ -147,11 +149,13 @@ header .container .hero .cta-btn:hover::before {
 .our-house {
     width: 100%;
     min-height: 100vh;
+    padding: 6rem 0 6rem;
+    display: flex;
+    align-items: center;
 }
 
 .our-house .container {
     width: 80%;
-    margin-top: 6rem;
     margin-inline: auto;
 }
 
@@ -216,9 +220,68 @@ header .container .hero .cta-btn:hover::before {
     background-color: #95b44d;
 } 
 
+/* About Us Section */
+.about {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.about .container {
+    width: 80%;
+    margin-inline: auto;
+}
+
+.about-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+.about-box .box img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.about-box .box:nth-child(1) {
+    position: relative;
+}
+
+.about-box .box:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #a7c957;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    z-index: -1;
+    transform: translate(20px, 20px);
+    opacity: 50%;
+}
+
+.about-box .box h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+}
+
+.about-box .box p {
+    margin-bottom: 0.8rem;
+    line-height: 2;
+}
+
 /* Media Query */
 @media screen and (max-width: 992px) {
     header .container {
+        width: 90%;
+    }
+    .our-house .container {
+        width: 90%;
+    }
+    .about .container {
         width: 90%;
     }
     header .container .navbar .menu {
@@ -282,5 +345,30 @@ header .container .hero .cta-btn:hover::before {
 @media screen and (max-width: 475px) {
     header .container .hero h1 {
         font-size: 2.4rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .about-box .box h1 {
+        font-size: 2.4rem;
+    }
+    .about-box .box p {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-box  {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .about-box .box h1 {
+        font-size: 2rem;
+        line-height: 1.5;
+    }
+    .about-box .box p {
+        font-size: 0.8rem;
     }
 }
